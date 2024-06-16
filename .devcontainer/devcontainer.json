@@ -1,0 +1,31 @@
+{
+    "name": "AzurePipelines",
+    "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.azurecli",
+                "ms-vscode.powershell",
+                "hashicorp.terraform",
+                "esbenp.prettier-vscode",
+                "tfsec.tfsec"
+            ]
+        }
+    },
+    "postStartCommand": "/home/vscode/azure-pipelines/start.sh",
+    "remoteUser": "vscode",
+    "build": {
+        "args": {
+            "UPGRADE_PACKAGES": "true",
+            "ARCH": "x64",
+            "AGENT_VERSION": "2.206.1"
+        }
+    },
+    "features": {
+        "terraform": "latest",
+        "azure-cli": "latest",
+        "git-lfs": "latest",
+        "github-cli": "latest",
+        "powershell": "latest"
+    }
+}
